@@ -1,0 +1,67 @@
+@import "base/reset";
+@import "base/colors";
+@import "abstracts/mixins";
+
+body {
+    background-image: url("images/blur-clean.jpg");
+    /* no-repeat center center/cover fixed; */
+}
+
+.wrapper {
+    @include flex();
+}
+
+.flex-item {
+    @include font(8vh, bold, $color1, Arial);
+    @include sizing(30%, 5px solid $color1);
+    @include text-align(center, 50px);
+    position: relative;
+    top: -90vh;
+    padding: 5%;
+
+    &:nth-of-type(1) {
+        background-color: $color2;
+        @include animation("animacija" 1.5s ease-in forwards);
+    }
+
+    &:nth-of-type(2) {
+        background-color: $color3;
+        @include animation("animacija" 1.5s 1.5s ease-in forwards);
+    }
+
+    &:nth-of-type(3) {
+        background-color: $color4;
+        @include animation("animacija" 1.5s 3s ease-in forwards);
+    }
+
+
+    // morala sam si prvo ovako zapisati da vidim kako cu ih izmiksati :)
+    /* height: 25vh;
+    width: 30%; 
+    border: 5px solid $color1;
+    color: $color1;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-align: center;
+    padding-top: 50px; */
+
+
+}
+
+@include keyframes(animacija) {
+    0% {
+        top: -90vh;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+
+
+
+
+
+

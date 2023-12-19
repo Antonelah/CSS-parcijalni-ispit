@@ -1,0 +1,38 @@
+@mixin flex {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@mixin font($font-size, $font-weight, $color, $font-family) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    color: $color;
+    font-family: $font-family;
+}
+
+@mixin sizing($width, $border) {
+    width: $width;
+    border: $border;
+}
+
+@mixin text-align($text-align, $padding) {
+    text-align: $text-align;
+    padding: $padding;
+}
+
+@mixin keyframes($animation-name) {
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($string) {
+    animation: #{$string};
+}
+
+@mixin transition($args...) {
+    transition: $args;
+}
